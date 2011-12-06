@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        COPYRIGHT (c) 2008  HONEYWELL INC.,   ALL RIGHTS RESERVED
+
+      This software is a copyrighted work and/or information protected as a trade secret. Legal rights of Honeywell 
+Inc. in this software is distinct from ownership of any medium in which the software is embodied. Copyright or trade secret 
+notices included must be reproduced in any copies authorized by Honeywell Inc. The information in this 
+software is subject to change without notice and should not be considered as a commitment by Honeywell Inc.
+
+      File Name                           : mobile.htm
+      Project Title                       : 
+      Author(s)                           : Venu Janga
+      Created on                          : 18 Sep 2011
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- META TAGS -->
+    
+    <meta http-equiv="content-type" content="text.html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>MAXPRO NVR</title>
+    <link rel="shortcut icon" type="image/png" href="images/MaxPro_logo.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/MaxPro_logo.png" />
+    <link rel="shortcut icon" type="image/png" href="images/MaxPro_logo.png" />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="stylesheet" href="./swcontrol/spinningwheel.css" type="text/css" media="all" />
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="./swcontrol/spinningwheel.js?v=1.4"></script>
+    <script type="text/javascript" src="./swcontrol/initializer.js"></script>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/mobile.js"></script>
+        
+
+</head>
+<body onload="AppLoad();">
+    <div id="container">
+        <!-- 
+        ##################### Login Tab ##################### 
+        -->
+        <div class="contentbar" id="LoginTab" style="display: none;">
+            <div class="TopBarStyle" id="login_titlebar">
+                <div class="title" style="position: absolute; top: 30%; left: 15%">
+                    MAXPRO NVR SE
+                </div>
+            </div>
+            <div id="login">
+                <form id="start" action="/">
+                <div>
+                    <table width="100%" align="center" cellspacing="0" cellpadding="5px">
+                        <tr>
+                            <td align="left" style="color: White;">
+                                <b>Login</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="height: 30px;" border="0" width="80%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left" style="vertical-align: middle; width: 5px; border-bottom: solid 1px gray;
+                                            border-top: solid 1px gray; border-right: solid 0px gray; border-left: solid 1px gray;
+                                            background-color: White; -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px;
+                                            border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-top: 4px;">
+                                            &nbsp;
+                                        </td>
+                                        <td style="border-bottom: solid 1px gray; border-top: solid 1px gray; border-right: solid 0px gray;
+                                            border-left: solid 0px gray; background-color: White;">
+                                            <input id="UID" value="admin" style="width: 100%; height: 100%; border: none; margin: 0px;
+                                                padding: 0px; -webkit-border-radius: 0px; background-color: White;" onfocus="if(this.value == 'user id') { this.value = ''; }"
+                                                onblur=" document.getElementById('UID').style.color = 'gray';if(this.value == '') {this.value = 'user id'}" />
+                                        </td>
+                                        <td align="right" valign="middle" style="width: 20px; border-bottom: solid 1px gray;
+                                            border-top: solid 1px gray; border-right: solid 1px gray; border-left: solid 0px gray;
+                                            background-color: White; -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px;
+                                            border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-top: 4px;">
+                                            <img src="./images/Clear_txt.png" width="15px" height="15px" onclick="document.getElementById('UID').value = 'user id';document.getElementById('UID').style.color = 'gray';" />&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="height: 30px;" border="0" width="80%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="left" style="vertical-align: middle; width: 5px; border-bottom: solid 1px gray;
+                                            border-top: solid 1px gray; border-right: solid 0px gray; border-left: solid 1px gray;
+                                            background-color: White; -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px;
+                                            border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-top: 4px;">
+                                            &nbsp;
+                                        </td>
+                                        <td style="border-bottom: solid 1px gray; border-top: solid 1px gray; border-right: solid 0px gray;
+                                            border-left: solid 0px gray; background-color: White;">
+                                            <input id="PWD" type="password" value="1234" style="width: 100%; height: 100%; border: none;
+                                                margin: 0px; padding: 0px; -webkit-border-radius: 0px; background-color: White;"
+                                                onfocus="if(this.value == 'password') { this.value = ''; this.type='password'; }"
+                                                onblur=" document.getElementById('PWD').style.color = 'gray';if(this.value == '') {this.type='text'; this.value = 'password'; }" />
+                                        </td>
+                                        <td align="right" valign="middle" style="width: 20px; border-bottom: solid 1px gray;
+                                            border-top: solid 1px gray; border-right: solid 1px gray; border-left: solid 0px gray;
+                                            background-color: White; -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px;
+                                            border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-top: 4px;">
+                                            <img src="./images/Clear_txt.png" width="15px" height="15px" onclick="document.getElementById('PWD').value = 'password'; document.getElementById('PWD').type = 'text'; document.getElementById('PWD').style.color = 'gray';" />&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="submit" onclick="CloseLoginTab()"><b>Go</b></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </form>
+            </div>
+        </div>
+        <!-- 
+        ##################### Search Tab ##################### 
+        -->
+        <div class="contentbar" id="SearchTab" style="display: none;">
+            <!-- Top Bar -->
+            <div class="TopBarStyle" id="SearchTab_TopBar">
+                <div class="title" style="position: absolute; top: 20%; width: 100%; text-align: center;
+                    color: White;">
+                    <span>Cameras</span>
+                </div>
+            </div>
+            <!-- Belli -->
+            <!-- Camera Search List -->
+            <div id="CamSearchList">
+                &nbsp;
+            </div>
+            <div id="SearchBar">
+                <table id="CamSrch" border="0" width="100%" height="44px" cellpadding="0px"
+                    cellspacing="0px" style="vertical-align:bottom;">
+                    <tr>
+                        <td width="80%" align="center" style="padding: 5px;">
+                            <table style="height: 30px;" border="0" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="left" style="vertical-align: middle; width: 24px; border-bottom: solid 1px gray;
+                                        border-top: solid 1px gray; border-right: solid 0px gray; border-left: solid 1px gray;
+                                        background-color: White; -webkit-border-top-left-radius: 15px; -webkit-border-bottom-left-radius: 15px;
+                                        border-top-left-radius: 15px; border-bottom-left-radius: 15px; padding-top: 4px;">
+                                        &nbsp;<img src="./images/search_sym.png" width="15px" height="15px" />
+                                    </td>
+                                    <td style="border-bottom: solid 1px gray; border-top: solid 1px gray; border-right: solid 0px gray;
+                                        border-left: solid 0px gray; background-color: White;">
+                                        <input id="CamSer" value="Search for cameras" style="color: gray; width: 100%; height: 100%;
+                                            border: none; margin: 0px; padding: 0px; -webkit-border-radius: 0px; background-color: White;"
+                                            onfocus="document.getElementById('CamSer').style.color = 'black';if(this.value == 'Search for cameras') { this.value = ''; }"
+                                            onblur=" document.getElementById('CamSer').style.color = 'gray';if(this.value == '') {this.value = 'Search for cameras'}" />
+                                    </td>
+                                    <td align="right" valign="middle" style="width: 24px; border-bottom: solid 1px gray;
+                                        border-top: solid 1px gray; border-right: solid 1px gray; border-left: solid 0px gray;
+                                        background-color: White; -webkit-border-top-right-radius: 15px; -webkit-border-bottom-right-radius: 15px;
+                                        border-top-right-radius: 15px; border-bottom-right-radius: 15px; padding-top: 4px;">
+                                        <img src="./images/Clear_txt.png" width="15px" height="15px" onclick="document.getElementById('CamSer').value = 'Search for cameras';" />&nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="center" style="padding-right: 5px; vertical-align: middle;" onclick="searchCameras(document.getElementById('CamSer').value)">
+                            <a class="submit" href="#" id="b_search"><b>Search</b></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 
+        ##################### Video Tab ##################### 
+        -->
+        <div class="contentbar" id="VideoTab" style="display: none;">
+            <!-- Top Bar -->
+            <div class="TopBarStyle" id="topbar">
+                           
+                <div class="title" style="position: absolute; top: 20%; width: 100%; text-align: center;
+                    color: White;">
+                    <span id="CamNameSpan"></span>
+                </div>
+            </div>
+            <!-- Belli -->
+            <div id="VideoBar">
+                <div id="SalvoContainer">
+                </div>
+                <div id="OPT_PTZ" style="display: none; vertical-align: middle;">
+                    <table cellpadding="0" cellspacing="0" width="100%" style="height: 100%;">
+                        <tr>
+                            <td id='pan_l' onmousedown="this.style.backgroundImage = 'url(images/opt_pleft_on.png)'; PZT(-5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_pleft_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_pleft_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='pan_r' onmousedown="this.style.backgroundImage = 'url(images/opt_pright_on.png)'; PZT(5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_pright_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_pright_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='tilt_u' onmousedown="this.style.backgroundImage = 'url(images/opt_tup_on.png)'; PZT(5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_tup_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_tup_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='tilt_d' onmousedown="this.style.backgroundImage = 'url(images/opt_tdown_on.png)'; PZT(-5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_tdown_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_tdown_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='zoom_i' onmousedown="this.style.backgroundImage = 'url(images/opt_zin_on.png)'; PZT(5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_zin_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_zin_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='zoom_o' onmousedown="this.style.backgroundImage = 'url(images/opt_zout_on.png)'; PZT(-5, this.id)" onmouseup="this.style.backgroundImage = 'url(images/opt_zout_off.png)'; PZT(0, this.id)" style="background-image: url(images/opt_zout_off.png);">
+                                &nbsp;
+                            </td>
+                            <td id='preset' onmousedown="this.style.backgroundImage = 'url(images/opt_Preset_on.png)'" onmouseup="this.style.backgroundImage = 'url(images/opt_Preset_off.png)';PZT(1, this.id);" style="background-image: url(images/opt_Preset_off.png);">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="OPT_SALVO" style="display: none;">
+                    <table cellpadding="0" cellspacing="0" width="100%" style="height: 100%;">
+                        <tr>
+                            <td onclick="ClearSalvo()" style="background-image: url(images/opt_slv_clr.png);" onmousedown="this.style.backgroundImage = 'url(images/opt_slv_clr_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_slv_clr.png)';">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td onclick="ChangeSalvo(1)" style="background-image: url(images/opt_slv_1x1_off.png);" onmousedown="this.style.backgroundImage = 'url(images/opt_slv_1x1_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_slv_1x1_off.png)';">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td onclick="ChangeSalvo(2)" style="background-image: url(images/opt_slv_2x2_off.png);" onmousedown="this.style.backgroundImage = 'url(images/opt_slv_2x2_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_slv_2x2_off.png)';">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="bottombar" id="bottombar">
+                <div id='opt_live' onclick="OptBarClick(this.id)" onmousedown="this.style.backgroundImage = 'url(images/opt_live_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_live_off.png)';" style="background-image: url(images/opt_live_off.png);">
+                    &nbsp;</div>
+                <div id='opt_ss' onclick="OptBarClick(this.id)" onmousedown="this.style.backgroundImage = 'url(images/opt_sshot_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_sshot_off.png)';" style="background-image: url(images/opt_sshot_off.png);">
+                    &nbsp;</div>
+                <!--
+                <div id='opt_jump' onclick="OptBarClick(this.id)" style="background-image: url(images/opt_jump_off.png);">
+                    &nbsp;</div>
+                -->
+                <div id='opt_speed' onclick="OptBarClick(this.id)" style="background-image: url(images/opt_speed_off.png);">
+                    &nbsp;</div>
+                <div id='opt_ptz_sl' onclick="OptBarClick(this.id)" style="background-image: url(images/opt_ptz_off.png);">
+                    &nbsp;</div>
+                <div id='opt_flp_vt' onclick="OptBarClick(this.id)" onmousedown="this.style.backgroundImage = 'url(images/opt_flp_vt_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_flp_vt_off.png)';" style="background-image: url(images/opt_flp_vt_off.png);">
+                    &nbsp;</div>
+                <div id='opt_flp_hz' onclick="OptBarClick(this.id)" onmousedown="this.style.backgroundImage = 'url(images/opt_flp_hz_on.png)';" onmouseup="this.style.backgroundImage = 'url(images/opt_flp_hz_off.png)';" style="background-image: url(images/opt_flp_hz_off.png);">
+                    &nbsp;</div>
+                <div id='opt_salvo_sl' onclick="OptBarClick(this.id)" style="background-image: url(images/opt_salvo_off.png);
+                    width: 10%;">
+                    &nbsp;</div>
+            </div>
+        </div>
+        <!-- 
+        ##################### Settings Tab ##################### 
+        -->
+        <div class="contentbar" id="SettingsTab" style="display: none;">
+            <div class="TopBarStyle" id="Div4">
+                <div class="title" style="position: absolute; top: 20%; width: 100%; text-align: center;
+                    color: White;">
+                    <span>Configuration</span>
+                </div>
+            </div>
+            <div class="SettingsDiv">
+                <div style="height: 10px;">
+                </div>
+                <table align="center" class="iTable" cellpadding="5" cellspacing="0" width="95%">
+                    <tr>
+                        <td class="iTd_tl" width="10%">
+                            &nbsp;
+                        </td>
+                        <td colspan="2" class="iTd_tr" width="90%">
+                            Show camera id with camera name
+                            <input id="ShwCamId" type="checkbox" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="iTd_bl">
+                            &nbsp;
+                        </td>
+                        <td colspan="2" class="iTd_br" style="color: Gray;">
+                            Server request maximum retry count:
+                            <select disabled="disabled">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div style="height: 10px;">
+                </div>
+                <table align="center" class="iTable" cellpadding="5" cellspacing="0" width="95%">
+                    <tr>
+                        <td width="10%" rowspan="3" class="iTd_tl iTd_bl">
+                            &nbsp;
+                        </td>
+                        <td width="90%" colspan="2" class="iTd_tr">
+                            Server URL:<br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="iTd">
+                            <span id='ServerURL'>&nbsp;</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="iTd_br" valign="top">
+                            QR:
+                            <img style="vertical-align: middle; border: solid 4px white;" src="images/QR.png" />
+                        </td>
+                    </tr>
+                </table>
+                <div style="height: 10px;">
+                </div>
+                <table align="center" class="iTable" cellpadding="5" cellspacing="0" width="95%">
+                    <tr>
+                        <td width="10%" class="iTd_tl iTd_bl">
+                            &nbsp
+                        </td>
+                        <td colspan="2" class=" iTd_br iTd_tr">
+                            Reload application...&nbsp;&nbsp;&nbsp;
+                            <img src="images/logout_1.png" onclick="DoAppReload()" width="28px" height="28px"
+                                style="cursor: pointer; text-align: right; vertical-align: middle;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 
+        ##################### Notifications Tab ##################### 
+        -->
+        <div class="contentbar" id="NotificationsTab" style="display: none;">
+            <div class="TopBarStyle" id="Div2">
+                <div class="title" style="position: absolute; top: 20%; width: 100%; text-align: center;
+                    color: White;">
+                    <span>Notifications</span>
+                </div>
+            </div>
+            <div class="NotificationsDiv">
+                <div style="height: 10px;">
+                </div>
+                <table align="center" class="iTable" cellpadding="5" cellspacing="0" width="95%">
+                    <tr>
+                        <td class="iTd_tl iTd_bl" width="10%">
+                            &nbsp;
+                        </td>
+                        <td colspan="2" class="iTd_tr iTd_br" width="90%">
+                            Notification services are not available / configured.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="tabsbar">
+            <div id="TAB1" onclick="OpenSearchTab()" style="background-image: url(images/tab_ser_on.png);">
+                &nbsp;</div>
+            <div id="TAB3" onclick="OpenVideoTab()" style="background-image: url(images/tab_vdo_off.png);">
+                &nbsp;</div>
+            <div id="TAB2" onclick="OpenSettingsTab()" style="background-image: url(images/tab_stng_off.png);">
+                &nbsp;</div>
+            <div id="TAB4" onclick="OpenNotificationsTab()" style="background-image: url(images/tab_ntf_off.png);
+                border-right: 0px; width: 20%;">
+                <!-- width:20%; is workaround to work in all browsers -->
+                &nbsp;</div>
+        </div>
+        <div id="login_logo" style="display:none;">
+        </div>
+    </div>
+    
+    <div id='appSplash' style="display:none;">
+        <br />
+        &nbsp;&nbsp;&nbsp;<img align=middle src="images/maxpro_logo.png" />&nbsp;&nbsp;&nbsp;MAXPRO NVR<br /><br />
+        &nbsp;&nbsp;&nbsp;Loading application.....
+        <img src="images/hon_logo.png" width="35%" height="12%" style="position:absolute; right:5px; bottom:5px;" />
+    </div>
+    
+    
+    
+</body>
+</html>
